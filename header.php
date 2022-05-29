@@ -56,9 +56,8 @@
                     title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
             <?php endwhile; ?>
             
-            <hr/>
-
             <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentPosts', $this->options->sidebarBlock)): ?>   
+                <hr/>
                 <h4 class="widget-title"><?php _e('最新文章'); ?></h3>
                 <ul class="widget-list">
                     <?php \Widget\Contents\Post\Recent::alloc()
@@ -66,9 +65,8 @@
                 </ul>
             <?php endif; ?>
 
-            <hr/>
-
             <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentComments', $this->options->sidebarBlock)): ?>
+                <hr/>
                 <h4 class="widget-title"><?php _e('最近回复'); ?></h3>
                 <ul class="widget-list">
                     <?php \Widget\Comments\Recent::alloc()->to($comments); ?>
@@ -79,21 +77,24 @@
                     <?php endwhile; ?>
                 </ul>
             <?php endif; ?>
-            <hr/>
+            
             <?php if (!empty($this->options->sidebarBlock) && in_array('ShowCategory', $this->options->sidebarBlock)): ?>
+                <hr/>
                 <h4 class="widget-title"><?php _e('分类'); ?></h3>
                 <?php \Widget\Metas\Category\Rows::alloc()->listCategories('wrapClass=widget-list'); ?>
             <?php endif; ?>
-            <hr/>
+
             <?php if (!empty($this->options->sidebarBlock) && in_array('ShowArchive', $this->options->sidebarBlock)): ?>
+                <hr/>
                 <h4 class="widget-title"><?php _e('归档'); ?></h3>
                 <ul class="widget-list">
                     <?php \Widget\Contents\Post\Date::alloc('type=month&format=F Y')
                         ->parse('<li><a href="{permalink}">{date}</a></li>'); ?>
                 </ul>
             <?php endif; ?>
-            <hr/>
+            
             <?php if (!empty($this->options->sidebarBlock) && in_array('ShowOther', $this->options->sidebarBlock)): ?>
+                <hr/>
                 <h3 class="widget-title"><?php _e('其它'); ?></h3>
                 <ul class="widget-list">
                     <?php if ($this->user->hasLogin()): ?>
