@@ -56,18 +56,18 @@
                     title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
             <?php endwhile; ?>
             
-            <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentPosts', $this->options->sidebarBlock)): ?>   
+            <?php if ($this->options->showRecentPosts): ?>   
                 <hr/>
-                <h4 class="widget-title"><?php _e('最新文章'); ?></h3>
+                <h4 class="widget-title"><?php $this->options->showRecentPosts(); ?></h3>
                 <ul class="widget-list">
                     <?php \Widget\Contents\Post\Recent::alloc()
                         ->parse('<li><a href="{permalink}">{title}</a></li>'); ?>
                 </ul>
             <?php endif; ?>
 
-            <?php if (!empty($this->options->sidebarBlock) && in_array('ShowRecentComments', $this->options->sidebarBlock)): ?>
+            <?php if ($this->options->showRecentComments): ?>
                 <hr/>
-                <h4 class="widget-title"><?php _e('最近回复'); ?></h3>
+                <h4 class="widget-title"><?php $this->options->showRecentComments(); ?></h3>
                 <ul class="widget-list">
                     <?php \Widget\Comments\Recent::alloc()->to($comments); ?>
                     <?php while ($comments->next()): ?>
@@ -78,24 +78,24 @@
                 </ul>
             <?php endif; ?>
             
-            <?php if (!empty($this->options->sidebarBlock) && in_array('ShowCategory', $this->options->sidebarBlock)): ?>
+            <?php if ($this->options->showCategory): ?>
                 <hr/>
-                <h4 class="widget-title"><?php _e('分类'); ?></h3>
+                <h4 class="widget-title"><?php $this->options->showCategory(); ?></h3>
                 <?php \Widget\Metas\Category\Rows::alloc()->listCategories('wrapClass=widget-list'); ?>
             <?php endif; ?>
 
-            <?php if (!empty($this->options->sidebarBlock) && in_array('ShowArchive', $this->options->sidebarBlock)): ?>
+            <?php if ($this->options->showArchive): ?>
                 <hr/>
-                <h4 class="widget-title"><?php _e('归档'); ?></h3>
+                <h4 class="widget-title"><?php $this->options->showArchive(); ?></h3>
                 <ul class="widget-list">
                     <?php \Widget\Contents\Post\Date::alloc('type=month&format=F Y')
                         ->parse('<li><a href="{permalink}">{date}</a></li>'); ?>
                 </ul>
             <?php endif; ?>
             
-            <?php if (!empty($this->options->sidebarBlock) && in_array('ShowOther', $this->options->sidebarBlock)): ?>
+            <?php if ($this->options->showOther): ?>
                 <hr/>
-                <h3 class="widget-title"><?php _e('其它'); ?></h3>
+                <h3 class="widget-title"><?php $this->options->showOther(); ?></h3>
                 <ul class="widget-list">
                     <?php if ($this->user->hasLogin()): ?>
                         <li class="last"><a href="<?php $this->options->adminUrl(); ?>"><?php _e('进入后台'); ?>
