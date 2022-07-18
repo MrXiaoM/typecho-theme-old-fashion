@@ -48,7 +48,8 @@
                               required><?php $this->remember('text'); ?></textarea>
                 </p>
                 <p>
-                    <button type="submit" class="submit"><?php _e('提交评论'); ?></button>
+		    <button type="submit" class="submit"><?php _e('提交评论'); ?></button>
+                    *提交的评论将在站长审核通过后显示
                 </p>
             </form>
         </div>

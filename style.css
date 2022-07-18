@@ -166,10 +166,74 @@ textarea {
   padding-right: 20px;
 }
 
+#side-btn {
+  position: fixed;
+  top: 20px;
+  left: 0px;
+  width: 70px;
+  height: 50px;
+  display: none;
+  background: #EEE;
+  box-shadow: 0px 0px 10px 0;
+  border-radius: 0px 24px 24px 0px;
+}
+
+#side-flag {
+  position: absolute;
+  display: none;
+}
+
+#side-control {
+  display: inline-block;
+  font-size: 2.5em;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin-left: 15px;
+  line-height: 1.5em;
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 700px) {
+#side-btn {
+  display: block;
+  z-index: 114;
+}
+#left {
+  position: fixed;
+  top: 0px;
+  width: 200px;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-right: 25px;
+  overflow: scroll;
+  left: -245px;
+  background: #EEE;
+  box-shadow: 0 0 10px 0;
+  z-index: 514;
+}
+#right {
+  margin-left: 10px;
+}
+}
+
+.index-post-content {
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+  max-height: 60px;
+}
+
 /* Search */
 #search {
   position: absolute;
-  top: 30px;
+  top: 100px;
   right: 30px;
 }
 #search input {

@@ -32,7 +32,7 @@ $this->need('header.php');
                        href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('评论', '1 条评论', '%d 条评论'); ?></a>
                 </li>
             </ul>
-            <div class="post-content" itemprop="articleBody">
+            <div class="post-content index-post-content" itemprop="articleBody">
                 <?php $this->content('- 阅读剩余部分 -'); ?>
             </div>
         </article>

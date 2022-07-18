@@ -13,6 +13,14 @@ function themeConfig($form)
 
     $form->addInput($logoUrl);
     
+    $extraSideHtml = new \Typecho\Widget\Helper\Form\Element\TextArea(
+        'extraSideHtml',
+        null, null,
+        _t('侧边栏额外html')
+    );
+
+    $form->addInput($extraSideHtml);
+    
     $showRecentPosts = new \Typecho\Widget\Helper\Form\Element\Text(
         'showRecentPosts',
         null,
@@ -54,6 +62,27 @@ function themeConfig($form)
     $form->addInput($showCategory);
     $form->addInput($showArchive);
     $form->addInput($showOther);
+
+    
+    $extraStyle = new \Typecho\Widget\Helper\Form\Element\TextArea(
+        'extraStyle',
+        null, null,
+        _t('额外css')
+    );
+    $extraScript = new \Typecho\Widget\Helper\Form\Element\TextArea(
+        'extraScript',
+        null, null,
+        _t('额外javascript (footer)')
+    );
+    $extraHtml = new \Typecho\Widget\Helper\Form\Element\TextArea(
+        'extraHtml',
+        null, null,
+        _t('额外html (body末尾)')
+    );
+
+    $form->addInput($extraStyle);
+    $form->addInput($extraScript);
+    $form->addInput($extraHtml);
 }
 
 /*

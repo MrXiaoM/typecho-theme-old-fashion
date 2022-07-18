@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <!DOCTYPE HTML>
-<html>
+<html lang="zh">
 <head>
     <meta charset="<?php $this->options->charset(); ?>">
     <meta name="renderer" content="webkit">
@@ -16,9 +16,24 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('normalize.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('grid.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
-
+    
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#side-btn").click(function() {
+            var checked = $("#side-flag").is(':checked')
+            $("#side-btn").animate({left:checked?'245px':'0px'}, 67);
+            $("#left").animate({left:checked?'0px':'-245px'}, 67);
+        });
+    });
+    </script>
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
+    <?php if($this->options->extraStyle): ?>
+        <style>
+            <?php $this->options->extraStyle(); ?>
+        </style>
+    <?php endif; ?>
 </head>
 <body>
     <div id="outbox">
@@ -28,7 +43,7 @@
                     <div class="site-name">
                         <?php if ($this->options->logoUrl): ?>
                             <a id="logo" href="<?php $this->options->siteUrl(); ?>">
-                                <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>"/>
+                                <img src="/blog_header.png" alt="<?php $this->options->title() ?>"/>
                             </a>
                         <?php else: ?>
                             <a id="logo" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
@@ -45,6 +60,10 @@
                 </form>
                 
         </div><!-- end #header -->
+        <div id="side-btn">
+            <input id="side-flag" type="checkbox"/>
+            <label id="side-control" for="side-flag">≡</label>
+        </div>
         <div id="left">
             <a<?php if ($this->is('index')): ?> class="current"<?php endif; ?>
                 href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a>
@@ -56,6 +75,13 @@
                     title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
             <?php endwhile; ?>
             
+            <?php 
+                if ($this->options->extraSideHtml):
+                    print('<br/>');
+                    $this->options->extraSideHtml();
+                endif;
+            ?>
+
             <?php if ($this->options->showRecentPosts): ?>   
                 <hr/>
                 <h4 class="widget-title"><?php $this->options->showRecentPosts(); ?></h3>
