@@ -11,8 +11,8 @@
     <?php if ($this->have()): ?>
         <?php while ($this->next()): ?>
             <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-                <h2 class="post-title" itemprop="name headline"><a itemprop="url"
-                                                                   href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
+                <h2 class="post-title" itemprop="name headline">
+                    <a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
                 </h2>
                 <ul class="post-meta">
                     <li itemprop="author" itemscope itemtype="http://schema.org/Person"><?php _e('作者: '); ?><a
@@ -28,7 +28,7 @@
                     </li>
                 </ul>
                 <div class="post-content" itemprop="articleBody">
-                    <?php $this->content('- 阅读剩余部分 -'); ?>
+                    <?php $this->excerpt(150, '...'); ?>
                 </div>
             </article>
         <?php endwhile; ?>

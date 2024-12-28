@@ -3,7 +3,7 @@
  * 复古主题
  *
  * @package Old Fasion Theme
- * @author MrXiaoM
+ * @author MrXiaoM (r1a改)
  * @version 1.0
  * @link https://datafa.de/
  */
@@ -33,7 +33,7 @@ $this->need('header.php');
                 </li>
             </ul>
             <div class="post-content index-post-content" itemprop="articleBody">
-                <?php $this->content('- 阅读剩余部分 -'); ?>
+                <?php $this->excerpt(150, '...'); ?>
             </div>
         </article>
     <?php endwhile; ?>
