@@ -1,6 +1,15 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
+function themeInit($self)
+{
+    $postsCount = $self->size($self->select()
+        ->where('table.contents.status = ?', 'publish')
+        ->where('table.contents.type = ?', 'post')
+    );
+    $self->parameter->pageSize = $postsCount;
+}
+
 function themeConfig($form)
 {
     $logoUrl = new \Typecho\Widget\Helper\Form\Element\Text(
@@ -12,15 +21,15 @@ function themeConfig($form)
     );
 
     $form->addInput($logoUrl);
-    
-    $extraSideHtml = new \Typecho\Widget\Helper\Form\Element\TextArea(
+
+    $extraSideHtml = new \Typecho\Widget\Helper\Form\Element\Textarea(
         'extraSideHtml',
         null, null,
         _t('侧边栏额外html')
     );
 
     $form->addInput($extraSideHtml);
-    
+
     $showRecentPosts = new \Typecho\Widget\Helper\Form\Element\Text(
         'showRecentPosts',
         null,
@@ -64,17 +73,17 @@ function themeConfig($form)
     $form->addInput($showOther);
 
     
-    $extraStyle = new \Typecho\Widget\Helper\Form\Element\TextArea(
+    $extraStyle = new \Typecho\Widget\Helper\Form\Element\Textarea(
         'extraStyle',
         null, null,
         _t('额外css')
     );
-    $extraScript = new \Typecho\Widget\Helper\Form\Element\TextArea(
+    $extraScript = new \Typecho\Widget\Helper\Form\Element\Textarea(
         'extraScript',
         null, null,
         _t('额外javascript (footer)')
     );
-    $extraHtml = new \Typecho\Widget\Helper\Form\Element\TextArea(
+    $extraHtml = new \Typecho\Widget\Helper\Form\Element\Textarea(
         'extraHtml',
         null, null,
         _t('额外html (body末尾)')
@@ -84,17 +93,3 @@ function themeConfig($form)
     $form->addInput($extraScript);
     $form->addInput($extraHtml);
 }
-
-/*
-function themeFields($layout)
-{
-    $logoUrl = new \Typecho\Widget\Helper\Form\Element\Text(
-        'logoUrl',
-        null,
-        null,
-        _t('站点LOGO地址'),
-        _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO')
-    );
-    $layout->addItem($logoUrl);
-}
-*/
