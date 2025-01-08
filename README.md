@@ -9,20 +9,44 @@
 - 简短footer
 - 将侧边栏链接居中
 - 一些小的css调整
+- IE6/7 兼容性优化
+- 使用JSON管理友链
+- 随机站点介绍
 
 # 友链写法
+看: [在Typecho中加入自定义的友链功能](https://r1a.rr.nu/archives/32/)
 新增links独立页面
 
 ```html
 !!! <!-- 使用!!!开头(必须) -->
 
-<hr class="link-separator">
-<div class="link-item">
-<img class="link-item-avatar" src="这里是头像地址">
-<div class="link-item-content">
-<a href="这里是友链地址">
-<h2>这里是友链标题</h2></a><p>这里是友链介绍</p>
-</div></div>
+<div id="linkItemsArea"></div> <!-- 友链插入点(必须) -->
+<br>
 
 !!! <!-- 使用!!!结束(必须) -->
 ```
+
+到博客主题后台 -> 设置外观 -> 链接页面JSON
+
+```json
+[
+  {
+    "avatar": "友链1头像地址",
+    "title": "友链1标题",
+    "url": "友链1地址",
+    "description": "友链1描述"
+  },
+  {
+    "avatar": "友链2头像地址",
+    "title": "友链2标题",
+    "url": "友链2地址",
+    "description": "友链2描述"
+  },
+  ......
+]
+```
+
+# 随机站点介绍
+
+到博客主题后台 -> 设置外观 -> 随机站点介绍
+将你想说的话填写进去, 若有多行则随机抽取一行显示
