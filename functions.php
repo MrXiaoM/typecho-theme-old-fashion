@@ -1,11 +1,13 @@
 <?php
-if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+if (!defined('__TYPECHO_ROOT_DIR__'))
+    exit;
 
 function themeInit($self)
 {
-    $postsCount = $self->size($self->select()
-        ->where('table.contents.status = ?', 'publish')
-        ->where('table.contents.type = ?', 'post')
+    $postsCount = $self->size(
+        $self->select()
+            ->where('table.contents.status = ?', 'publish')
+            ->where('table.contents.type = ?', 'post')
     );
     $self->parameter->pageSize = $postsCount;
 }
@@ -24,11 +26,30 @@ function themeConfig($form)
 
     $extraSideHtml = new \Typecho\Widget\Helper\Form\Element\Textarea(
         'extraSideHtml',
-        null, null,
+        null,
+        null,
         _t('侧边栏额外html')
     );
 
     $form->addInput($extraSideHtml);
+
+    $siteIntroduce = new \Typecho\Widget\Helper\Form\Element\Textarea(
+        'siteIntroduce',
+        null,
+        null,
+        _t('随机站点介绍, 每行一个')
+    );
+
+    $form->addInput($siteIntroduce);
+
+    $siteOutLinks = new \Typecho\Widget\Helper\Form\Element\Textarea(
+        'siteOutLinks',
+        null,
+        null,
+        _t('链接页面JSON')
+    );
+
+    $form->addInput($siteOutLinks);
 
     $showRecentPosts = new \Typecho\Widget\Helper\Form\Element\Text(
         'showRecentPosts',
@@ -37,7 +58,7 @@ function themeConfig($form)
         _t('显示最新文章'),
         _t('填写字符修改标题，留空为不显示')
     );
-    
+
     $showRecentComments = new \Typecho\Widget\Helper\Form\Element\Text(
         'showRecentComments',
         null,
@@ -72,20 +93,23 @@ function themeConfig($form)
     $form->addInput($showArchive);
     $form->addInput($showOther);
 
-    
+
     $extraStyle = new \Typecho\Widget\Helper\Form\Element\Textarea(
         'extraStyle',
-        null, null,
+        null,
+        null,
         _t('额外css')
     );
     $extraScript = new \Typecho\Widget\Helper\Form\Element\Textarea(
         'extraScript',
-        null, null,
+        null,
+        null,
         _t('额外javascript (footer)')
     );
     $extraHtml = new \Typecho\Widget\Helper\Form\Element\Textarea(
         'extraHtml',
-        null, null,
+        null,
+        null,
         _t('额外html (body末尾)')
     );
 
