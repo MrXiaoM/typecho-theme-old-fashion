@@ -3,7 +3,7 @@
  * 复古主题
  *
  * @package Old Fasion Theme
- * @author MrXiaoM
+ * @author MrXiaoM (r1a改)
  * @version 1.0
  * @link https://datafa.de/
  */
