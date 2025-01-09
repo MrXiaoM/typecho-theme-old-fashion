@@ -31,8 +31,7 @@
 
 <!-- 暗色主题 -->
 <script>
-    const darkBtn = document.getElementById('dark-btn');
-    darkBtn.addEventListener('click', () => {
+    document.getElementById('dark-btn').addEventListener('click', () => {
         const head = document.getElementsByTagName('head')[0];
         const darkStyle = document.getElementById('dark-style');
         if (darkStyle) {
