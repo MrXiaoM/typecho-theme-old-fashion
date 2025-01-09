@@ -3,7 +3,7 @@
 <?php function isMSIE()
 {
     $user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-    return strpos($user_agent, 'trident') || strpos($user_agent, 'msie');
+    return strpos($user_agent, 'trident') !== false || strpos($user_agent, 'msie') !== false;
 } ?>
 
 <!DOCTYPE HTML>
