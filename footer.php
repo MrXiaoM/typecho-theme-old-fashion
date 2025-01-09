@@ -37,14 +37,14 @@
         const darkStyle = document.getElementById('dark-style');
         if (darkStyle) {
             head.removeChild(darkStyle);
-            document.cookie = 'colorScheme=light; path=/';
+            document.cookie = 'colorScheme=light; path=/; expires=0';
         } else {
             const link = document.createElement('link');
             link.id = 'dark-style';
             link.rel = 'stylesheet';
             link.href = "<?php $this->options->themeUrl('dark.css'); ?>";
             head.appendChild(link);
-            document.cookie = 'colorScheme=dark; path=/';
+            document.cookie = 'colorScheme=dark; path=/; expires=0';
         }
     });
     function isDarkMode() {
