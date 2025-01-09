@@ -59,14 +59,12 @@
                         <?php else: ?>
                             <a id="logo" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
                             <p class="description">
-                                <?php 
-                                if ($this->options->siteIntroduce) {
+                                <?php if ($this->options->siteIntroduce) {
                                     $IntroduceLines = array_filter(explode("\n", str_replace("\r\n", "\n", $this->options->siteIntroduce)));
-                                    echo $IntroduceLines[array_rand($IntroduceLines)]; 
+                                    echo $IntroduceLines[array_rand($IntroduceLines)];
                                 } else {
                                     $this->options->description();
-                                }
-                                ?>
+                                } ?>
                             </p>
                         <?php endif; ?>
                     </div>
@@ -95,7 +93,7 @@
                             $this->options->extraSideHtml();
                         endif;
                         ?>
-                <button id="dark-btn">更换主题</button>
+                        <br><button id="dark-btn">更换主题</button>
             </div>
 
             <?php if ($this->options->showRecentPosts): ?>
