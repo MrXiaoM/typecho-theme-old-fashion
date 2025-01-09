@@ -224,7 +224,7 @@ textarea {
 }
 
 .index-post-content {
-  overflow-y: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   max-height: 60px;
 }
