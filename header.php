@@ -2,8 +2,8 @@
     exit; ?>
 <?php function isMSIE()
 {
-    $user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-    return strpos($user_agent, 'trident') !== false || strpos($user_agent, 'msie') !== false;
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    return strpos($user_agent, 'Trident') !== false || strpos($user_agent, 'MSIE') !== false;
 } ?>
 
 <!DOCTYPE HTML>
