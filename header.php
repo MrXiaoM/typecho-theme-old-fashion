@@ -59,8 +59,14 @@
                         <?php else: ?>
                             <a id="logo" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
                             <p class="description">
-                                <?php $IntroduceLines = array_filter(explode("\n", str_replace("\r\n", "\n", $this->options->siteIntroduce)));
-                                echo $IntroduceLines[array_rand($IntroduceLines)]; ?>
+                                <?php 
+                                if ($this->options->siteIntroduce) {
+                                    $IntroduceLines = array_filter(explode("\n", str_replace("\r\n", "\n", $this->options->siteIntroduce)));
+                                    echo $IntroduceLines[array_rand($IntroduceLines)]; 
+                                } else {
+                                    $this->options->description();
+                                }
+                                ?>
                             </p>
                         <?php endif; ?>
                     </div>
