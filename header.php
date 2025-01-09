@@ -89,6 +89,7 @@
                             $this->options->extraSideHtml();
                         endif;
                         ?>
+                <button id="dark-btn">更换主题</button>
             </div>
 
             <?php if ($this->options->showRecentPosts): ?>

@@ -9,7 +9,7 @@ body {
   font-size: 87.5%;
 }
 
-a {
+a, #dark-btn {
   color: #3354AA;
 }
 
@@ -196,6 +196,12 @@ textarea {
   text-align: center;
 }
 
+#dark-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 /* 移动端适配 */
 @media screen and (max-width: 700px) {
   #side-btn {
@@ -224,7 +230,7 @@ textarea {
 }
 
 .index-post-content {
-  overflow-y: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
   max-height: 60px;
 }

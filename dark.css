@@ -1,0 +1,171 @@
+/* ------------------
+ * Global style
+ * --------------- */
+
+body {
+  background-color: #111111;
+}
+
+a {
+  color: #CCAB55;
+}
+
+a:hover,
+a:active {
+  color: #BBBBBB;
+}
+
+pre,
+code {
+  background: #0C0C0C;
+}
+
+code {
+  color: #46B5B7;
+}
+
+pre code {
+  color: #BBBBBB;
+}
+
+blockquote {
+  border-color: #111111;
+  color: #999999;
+}
+
+table {
+  border-color: #222222;
+}
+
+table th,
+table td {
+  border-color: #111111;
+}
+
+table th {
+  background: #0C0C0C;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+textarea {
+  border-color: #161616;
+}
+
+
+/* Special link style */
+.post-meta a,
+.post-content a,
+.widget a,
+.comment-content a {
+  border-color: #111111;
+}
+
+/* ------------------
+ * Header
+ * --------------- */
+
+#header,
+#footer {
+  background: #121869;
+}
+
+#outbox {
+  background: #111111;
+  border-color: #CCCCCC;
+}
+
+#side-btn {
+  background: #111111;
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 700px) {
+  #left {
+    background: #111111;
+  }
+}
+
+
+/* ------------------
+ * Main
+ * --------------- */
+
+.post {
+  border-color: #222222;
+}
+
+.post-meta li {
+  border-color: #222222;
+}
+
+.post-near {
+  color: #666666;
+}
+
+.archive-title {
+  color: #666666;
+}
+
+/* Page nav */
+.page-navigator a:hover {
+  background: #111111;
+}
+
+.page-navigator .current a {
+  color: #BBBBBB;
+  background: #111111;
+}
+
+/* ------------------
+ * Comment list
+ * --------------- */
+
+.comment-list li {
+  border-color: #111111;
+}
+
+.comment-list li.comment-level-odd {
+  background: #09090C;
+}
+
+.comment-list li.comment-level-even {
+  background: #000000;
+}
+
+.comment-list li.comment-by-author {
+  background: #000617;
+}
+
+.comment-meta a {
+  color: #666666;
+}
+
+.comment-author {
+  color: #BBBBBB;
+}
+
+/* Comment reply */
+.comment-list .respond {
+  border-color: #111111;
+}
+
+#comment-form .required:after {
+  color: #33FFFF;
+}
+
+/* -----------------
+ * Content format
+ *--------------- */
+
+.post-content a img,
+.comment-content a img {
+  background: #000000;
+}
+
+.post-content hr,
+.comment-content hr {
+  border-color: #161616;
+}

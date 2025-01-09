@@ -29,6 +29,23 @@
     });
 </script>
 
+<!-- 暗色主题 -->
+<script>
+    document.getElementById('dark-btn').addEventListener('click', () => {
+        const head = document.getElementsByTagName('head')[0];
+        const darkStyle = document.getElementById('dark-style');
+        if (darkStyle) {
+            head.removeChild(darkStyle);
+        } else {
+            const link = document.createElement('link');
+            link.id = 'dark-style';
+            link.rel = 'stylesheet';
+            link.href = "<?php $this->options->themeUrl('dark.css'); ?>";
+            head.appendChild(link);
+        }
+    });
+</script>
+
 <?php if ($this->options->extraScript): ?>
     <script>
         <?php $this->options->extraScript(); ?>
