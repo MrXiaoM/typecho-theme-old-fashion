@@ -31,19 +31,36 @@
 
 <!-- 暗色主题 -->
 <script>
-    document.getElementById('dark-btn').addEventListener('click', () => {
+    const darkBtn = document.getElementById('dark-btn');
+    darkBtn.addEventListener('click', () => {
         const head = document.getElementsByTagName('head')[0];
         const darkStyle = document.getElementById('dark-style');
         if (darkStyle) {
             head.removeChild(darkStyle);
+            document.cookie = 'colorScheme=light; path=/';
         } else {
             const link = document.createElement('link');
             link.id = 'dark-style';
             link.rel = 'stylesheet';
             link.href = "<?php $this->options->themeUrl('dark.css'); ?>";
             head.appendChild(link);
+            document.cookie = 'colorScheme=dark; path=/';
         }
     });
+    function isDarkMode() {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
+            if (cookie.startsWith("colorScheme=")) {
+                const value = cookie.substring("colorScheme=".length);
+                return value === "dark";
+            }
+        }
+        return false;
+    }
+    if (isDarkMode()) {
+        darkBtn.click();
+    }
 </script>
 
 <?php if ($this->options->extraScript): ?>
