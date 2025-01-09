@@ -6,7 +6,7 @@ body {
   background-color: #111111;
 }
 
-a {
+a, #dark-btn {
   color: #CCAB55;
 }
 
@@ -81,7 +81,7 @@ textarea {
   background: #111111;
 }
 
-/* 移动端适配 */
+/* 绉诲姩绔€傞厤 */
 @media screen and (max-width: 700px) {
   #left {
     background: #111111;
