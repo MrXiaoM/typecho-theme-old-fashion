@@ -9,7 +9,7 @@ body {
   font-size: 87.5%;
 }
 
-a {
+a, #dark-btn {
   color: #3354AA;
 }
 
@@ -194,6 +194,12 @@ textarea {
   margin-left: 15px;
   line-height: 1.5em;
   text-align: center;
+}
+
+#dark-btn {
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
 /* 移动端适配 */
