@@ -81,7 +81,7 @@ textarea {
   background: #111111;
 }
 
-/* 绉诲姩绔€傞厤 */
+/* 移动端适配 */
 @media screen and (max-width: 700px) {
   #left {
     background: #111111;
