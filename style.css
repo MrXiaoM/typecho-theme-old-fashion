@@ -236,6 +236,7 @@ textarea {
 /* Search */
 #search {
   position: relative;
+  height: 80px;
 }
 
 #search input {
