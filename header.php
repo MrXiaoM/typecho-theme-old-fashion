@@ -71,10 +71,13 @@
                 </div><!-- end .row -->
             </div>
         </div><!-- end #header -->
-        <div id="side-btn">
+
+        <!-- 侧边栏 -->
+        <button id="side-btn" onclick="changeSideStatus()">
             <input id="side-flag" type="checkbox" />
             <label id="side-control" for="side-flag">≡</label>
-        </div>
+        </button>
+
         <div id="left">
             <div id="left-links">
                 <a<?php if ($this->is('index')): ?> class="current" <?php endif; ?>

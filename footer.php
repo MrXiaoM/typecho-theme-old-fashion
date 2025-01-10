@@ -14,8 +14,8 @@
 
 <!-- 侧边栏 -->
 <script>
-    const sideBtn = document.getElementById('side-btn');
-    sideBtn.addEventListener('click', () => {
+    function changeSideStatus() {
+        const sideBtn = document.getElementById('side-btn');
         const sideFlag = document.getElementById('side-flag');
         const left = document.getElementById('left');
         var checked = sideFlag.checked;
@@ -26,7 +26,7 @@
             sideBtn.style.left = '0px';
             left.style.left = '-245px';
         }
-    });
+    }
 </script>
 
 <!-- 暗色主题 -->
