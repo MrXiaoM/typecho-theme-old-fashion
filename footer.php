@@ -31,8 +31,7 @@
 
 <!-- 暗色主题 -->
 <script>
-    const darkBtn = document.getElementById('dark-btn');
-    darkBtn.addEventListener('click', () => {
+    function changeDarkMode() {
         const head = document.getElementsByTagName('head')[0];
         const darkStyle = document.getElementById('dark-style');
         if (darkStyle) {
@@ -46,7 +45,7 @@
             head.appendChild(link);
             document.cookie = 'colorScheme=dark; path=/; expires=0';
         }
-    });
+    }
     function isDarkMode() {
         const cookies = document.cookie.split(';');
         for (let i = 0; i < cookies.length; i++) {
@@ -59,7 +58,7 @@
         return false;
     }
     if (isDarkMode()) {
-        darkBtn.click();
+        changeDarkMode();
     }
 </script>
 

@@ -96,7 +96,7 @@
                             $this->options->extraSideHtml();
                         endif;
                         ?>
-                        <br><button id="dark-btn">更换主题</button>
+                        <br><button id="dark-btn" onclick="changeDarkMode()">更换主题</button>
             </div>
 
             <?php if ($this->options->showRecentPosts): ?>
