@@ -270,6 +270,7 @@ textarea {
 .post {
   padding: 15px 0 5px;
   border-bottom: 1px solid #DDD;
+  overflow-wrap: break-word;
 }
 
 .post-title {
