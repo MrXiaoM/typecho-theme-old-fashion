@@ -115,7 +115,7 @@ textarea {
 }
 
 #side-btn {
-  background-color: rgb(34, 36, 38);
+  background-color: rgb(49 55 62);
 }
 
 #dark-btn {
@@ -125,7 +125,7 @@ textarea {
 
 @media screen and (max-width: 700px) {
   #left {
-    background-color: rgb(34, 36, 38);
+    background-color: rgb(49 55 62);
   }
 }
 
