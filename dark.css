@@ -211,3 +211,69 @@ textarea {
 .comment-content hr {
   border-color: rgb(54, 59, 61);
 }
+
+.hljs {
+  background-image: initial;
+  background-color: rgb(31, 33, 35);
+  color: rgb(189, 183, 175);
+}
+
+.hljs-comment {
+  color: rgb(163, 156, 144);
+}
+
+.hljs-punctuation,
+.hljs-tag {
+  color: rgba(189, 183, 175, 0.67);
+}
+
+.hljs-tag .hljs-attr,
+.hljs-tag .hljs-name {
+  color: rgb(189, 183, 175);
+}
+
+.hljs-deletion,
+.hljs-number,
+.hljs-quote,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-string,
+.hljs-template-tag,
+.hljs-type {
+  color: rgb(255, 109, 109);
+}
+
+.hljs-section,
+.hljs-title {
+  color: rgb(255, 109, 109);
+}
+
+.hljs-link,
+.hljs-operator,
+.hljs-regexp,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-symbol,
+.hljs-template-variable,
+.hljs-variable {
+  color: rgb(179, 103, 103);
+}
+
+.hljs-literal {
+  color: rgb(131, 177, 115);
+}
+
+.hljs-addition,
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code {
+  color: rgb(189, 255, 124);
+}
+
+.hljs-meta {
+  color: rgb(105, 186, 225);
+}
+
+.hljs-meta .hljs-string {
+  color: rgb(97, 176, 208);
+}

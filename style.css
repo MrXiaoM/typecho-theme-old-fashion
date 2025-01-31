@@ -198,6 +198,7 @@ textarea {
   border: none;
   outline: none;
   background: transparent;
+  cursor: pointer;
 }
 
 /* 移动端适配 */

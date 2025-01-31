@@ -71,6 +71,10 @@
     <?php $this->options->extraHtml(); ?>
 <?php endif; ?>
 
+<!-- 代码高亮 -->
+<script src="<?php $this->options->themeUrl('highlight/highlight.js'); ?>"></script>
+<script>hljs.highlightAll();</script>
+
 </body>
 
 </html>

@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="<?php $this->options->themeUrl('normalize.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('grid.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('style.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('highlight/highlight.css'); ?>">
 
     <!-- 设置favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
