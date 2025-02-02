@@ -6,23 +6,23 @@
 <?php if ($this->is('page', 'links')): ?>
    <style>
       /* Link Card */
-      .link-separator {
-         background: gray;
-         width: 97% !important;
-         height: 1px;
+      #linkItemsArea {
+         width: 100%;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 10px;
       }
 
-      .link-item:after {
-         content: "";
-         display: table;
-         clear: both;
+      @media screen and (max-width: 700px) {
+         #linkItemsArea {
+            grid-template-columns: 1fr;
+         }
       }
 
       .link-item {
-         width: 100%;
          height: 100px;
          overflow: hidden;
-         *zoom: 1;
+         border: 1px solid black;
       }
 
       .link-item a {
@@ -60,7 +60,7 @@
    <script>
       let linkItemsHTML = "";
       for (const JsonItem of JSON.parse(`<?php $this->options->siteOutLinks() ?>`)) {
-         linkItemsHTML += `<hr class="link-separator"><div class="link-item"><img class="link-item-avatar" src="${JsonItem.avatar}"><div class="link-item-content"><a href="${JsonItem.url}" target="_blank"><h2>${JsonItem.title}</h2></a><p>${JsonItem.description}</p></div></div>`;
+         linkItemsHTML += `<div class="link-item"><img class="link-item-avatar" src="${JsonItem.avatar}"><div class="link-item-content"><a href="${JsonItem.url}" target="_blank"><h2>${JsonItem.title}</h2></a><p>${JsonItem.description}</p></div></div>`;
       }
       document.getElementById('linkItemsArea').innerHTML = linkItemsHTML;
    </script>
