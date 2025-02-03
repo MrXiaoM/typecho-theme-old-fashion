@@ -35,6 +35,7 @@
          height: auto;
          max-height: 100%;
          margin-right: 10px;
+         border-right: 1px solid gray;
       }
 
       .link-item-content {
