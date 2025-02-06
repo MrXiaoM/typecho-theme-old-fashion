@@ -41,7 +41,7 @@
             const link = document.createElement('link');
             link.id = 'dark-style';
             link.rel = 'stylesheet';
-            link.href = "<?php $this->options->themeUrl('dark.css'); ?>";
+            link.href = "<?php $this->options->themeUrl('style/dark.css'); ?>";
             head.appendChild(link);
             document.cookie = 'colorScheme=dark; path=/; expires=0';
         }
@@ -72,7 +72,7 @@
 <?php endif; ?>
 
 <!-- 代码高亮 -->
-<script src="<?php $this->options->themeUrl('highlight/highlight.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('script/highlight.js'); ?>"></script>
 <script>hljs.highlightAll();</script>
 
 </body>
