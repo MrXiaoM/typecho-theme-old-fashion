@@ -9,7 +9,8 @@ body {
   font-size: 87.5%;
 }
 
-a, #dark-btn {
+a,
+#dark-btn {
   color: #3354AA;
 }
 
@@ -250,14 +251,20 @@ textarea {
   right: 3px;
   width: 24px;
   height: 24px;
-  background: transparent url(img/icon-search.png) no-repeat center center;
+  background: transparent no-repeat center center;
   border: none;
   cursor: pointer;
 }
 
+#search button img {
+  margin-top: -1px;
+  margin-left: -6px;
+  width: calc(100% + 12px);
+  height: calc(100% + 2px);
+}
+
 @media (min-resolution: 192dpi) {
   #search button {
-    background-image: url(img/icon-search@2x.png);
     background-size: 24px 24px;
   }
 }

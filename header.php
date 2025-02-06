@@ -160,7 +160,10 @@
                             <hr>
                             <form id="search" method="post" action="<?php $this->options->siteUrl(); ?>" role="search">
                                 <input type="text" id="s" name="s" class="text" placeholder="<?php _e('输入关键字搜索'); ?>" />
-                                <button type="submit" class="submit"></button>
+                                <button type="submit" class="submit">
+                                    <img src="<?php $this->options->themeUrl('img/icon-search.png'); ?>"
+                                        alt="icon-search">
+                                </button>
                             </form>
         </div>
         <div id="right">
