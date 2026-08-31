@@ -1,4 +1,4 @@
-# Old Fasion Theme
+# Old Fashion Theme
 
 - 适配Typecho 1.2.1版本, 修复部分bug
 - 移除jQuery依赖，使用原生JavaScript
